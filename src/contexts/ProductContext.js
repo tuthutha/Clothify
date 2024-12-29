@@ -7,6 +7,7 @@ export const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -25,7 +26,9 @@ const ProductProvider = ({ children }) => {
           setProducts(productList);
         }
       } catch (error) {
-        return error;
+        console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -34,7 +37,7 @@ const ProductProvider = ({ children }) => {
 
   return (
     <>
-      <ProductContext.Provider value={{ products }}>
+      <ProductContext.Provider value={{ products, isLoading }}>
         {children}
       </ProductContext.Provider>
     </>

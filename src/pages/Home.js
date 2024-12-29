@@ -4,7 +4,7 @@ import Product from '../components/Product';
 
 const Home = () => {
   // get products from product context
-  const { products } = useContext(ProductContext);
+  const { products, isLoading } = useContext(ProductContext);
 
   // get only men's & women's clothing category
   const filteredProducts = products.filter(
@@ -12,6 +12,14 @@ const Home = () => {
       product.category === 'Mens Clothing' ||
       product.category === 'Womens Clothing'
   );
+
+  if (isLoading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
 
   return (
     <div>
