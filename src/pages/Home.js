@@ -7,11 +7,11 @@ const Home = () => {
   const { products } = useContext(ProductContext);
 
   // get only men's & women's clothing category
-  const filteredProducts = products.filter((item) => {
-    return (
-      item.category === "men's clothing" || item.category === "women's clothing"
-    );
-  });
+  const filteredProducts = products.filter(
+    (product) =>
+      product.category === 'Mens Clothing' ||
+      product.category === 'Womens Clothing'
+  );
 
   return (
     <div>
