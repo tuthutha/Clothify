@@ -13,7 +13,6 @@ const ProductProvider = ({ children }) => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(`${PATH.baseUrl}/${PATH.products}`);
-
         if (response.status === STATUS_CODE.success) {
           const data = await response.json();
 
