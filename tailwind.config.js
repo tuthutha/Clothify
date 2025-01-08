@@ -17,9 +17,9 @@ module.exports = {
       xl: '1440px',
     },
     extend: {
-      color: {
-        primary: '222222',
-        secondary: '#F5E6E0'
+      colors: {
+        primary: '#222222',
+        secondary: '#F5E6E0',
       },
       backgroundImage: {
         hero: "url('./img/bg_hero.svg')",
